@@ -1,0 +1,13 @@
+import unittest
+from unittest import mock
+from unittest.mock import patch
+import io
+from Cities import game
+import pandas as pd
+
+
+
+def startGame_test1(mock_stdout):
+    game_inst = game()
+    cdb = pd.read_csv("C:/Users/svyat/Desktop/тестирование/PR3/worldcities.csv")
+    
