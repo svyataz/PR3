@@ -8,6 +8,5 @@ import pandas as pd
 
 
 def startGame_test1(mock_stdout):
-    game_inst = game()
-    cdb = pd.read_csv("C:/Users/svyat/Desktop/тестирование/PR3/worldcities.csv")
+    
     
