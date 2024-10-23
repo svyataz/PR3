@@ -24,10 +24,13 @@ class game:
         return  self.__player
     
     def startGame(self):
+        self.first()
+        return self.gameloop()
+
+    def first(self):
         self.__pc = self.__cdb.sample().values[0, 1]
         self.__cdb = self.__cdb[self.__cdb.city_ascii != self.__pc]
         print("start of the game, if you get tired write: I'm done")
-        self.gameloop()
 
     def players_move(self):
         print("My word: ", self.__pc,
@@ -55,17 +58,15 @@ class game:
         return None
     
     def gameloop(self):
-        buff1 = self.players_move()
-        if (buff1 != None):
-            print(buff1)
-            return
+        buff = self.players_move()
+        if (buff != None):
+            return buff
         
-        buff2 = self.pcs_move()
-        if (buff2 != None):
-            print(buff1)
-            return
+        buff = self.pcs_move()
+        if (buff != None):
+            return buff
         
         self.gameloop()
 
-game_inst = game()
-print(game_inst.startGame())
+'''game_inst = game()
+print(game_inst.startGame())'''
